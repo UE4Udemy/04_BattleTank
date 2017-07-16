@@ -1,0 +1,18 @@
+concept: 
+Battle Tank is an open-world versus tank combat game
+Terrain will be used for advantage ie high ground
+Focus will be on feel ie only keep what's fun
+
+rules:
+Can move anywhere in terrain, surrounded by mountains
+Both players start with pre determined health and ammo
+Each direct hit takes health
+Last player standing wins
+
+requirements:
+SFX: Gun firing, explosion, barrel moving, turret moving, engine sound
+StaticMesh: Tank consisting of tracks, body, turret and barrel
+Textures: Add later on for flare
+Music: Background music to create tension
+	
+
