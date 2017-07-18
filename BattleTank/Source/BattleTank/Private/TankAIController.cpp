@@ -14,14 +14,28 @@ void ATankAIController::BeginPlay()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Possessed: %s"), *(AIControlledTank->GetName()));
+		UE_LOG(LogTemp, Warning, TEXT("AI Possessed Tank: %s"), *(AIControlledTank->GetName()));
 	}
 
+	auto PlayerTank = GetPlayerTank();
+	if (!PlayerTank)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AI Tank no find Player Pawn"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Player Pawn: %s"), *(PlayerTank->GetName()));
+	}
 }
 
 ATank* ATankAIController::GetAIControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
+}
+
+ATank* ATankAIController::GetPlayerTank() const
+{
+	return Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 }
 
 
