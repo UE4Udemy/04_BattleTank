@@ -18,5 +18,7 @@ public:
 	UFUNCTION(BluePrintCallable, Category = Input)
 	void SetThrottle(float Throttle);
 	
-	
+	// max force per track, in Newtons
+	UPROPERTY(EditDefaultsOnly)
+	float TrackMaxDrivingForce = 550200; // assuming 10m/s/s acceleration
 };
