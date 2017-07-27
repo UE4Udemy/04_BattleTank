@@ -17,7 +17,8 @@ void ATankAIController::Tick(float DeltaTime)
 	auto PlayerTank = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	if (PlayerTank)
 	{
-		// TODO move towards player
+		// move towards player
+		MoveToActor(PlayerTank, AcceptanceRadius); // TODO check radius is in cm
 
 		// aim towards the player
 		AIControlledTank->AimAt(PlayerTank->GetActorLocation());
