@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Dig Bick
 
 #pragma once
 
@@ -20,9 +20,11 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
-private:
+protected:
+	UFUNCTION(BlueprintCallable, Category = Setup)
 	ATank* GetControlledTank() const;
 
+private:
 	// start the tank moving the barrel, allow shot to hit
 	// where crosshair intersects world
 	void AimTowardsCrosshair();
