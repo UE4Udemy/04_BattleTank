@@ -46,4 +46,7 @@ private:
 	UTankBarrel* Barrel = nullptr; // TODO remove
 
 	float ReloadTimeInSeconds = 3;
+
+	virtual void BeginPlay() override;
+
 };
