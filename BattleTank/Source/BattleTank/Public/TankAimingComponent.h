@@ -51,6 +51,8 @@ private:
 
 	void MoveBarrelTowards(FVector AimDirection);
 
+	bool bIsBarrelMoving();
+
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 14600;
 
@@ -61,5 +63,7 @@ private:
 	float ReloadTimeInSeconds = 3;
 
 	double LastFireTime = 0;
+
+	FVector AimDirection;
 
 };
