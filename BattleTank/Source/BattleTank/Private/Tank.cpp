@@ -1,8 +1,6 @@
 // Copyright Dig Bick
 
 #include "BattleTank.h"
-#include "TankBarrel.h"
-#include "Projectile.h"
 #include "Tank.h"
 
 
@@ -13,27 +11,5 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-void ATank::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-void ATank::Fire()
-{
-	if (!ensure(Barrel)) { return; }
-	bool bisReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
-	if (bisReloaded)
-	{
-		// spawn a projectile at the socket location on barrel
-		auto Projectile = GetWorld()->SpawnActor<AProjectile>(
-			ProjectileBlueprint,
-			Barrel->GetSocketLocation(FName("Projectile")),
-			Barrel->GetSocketRotation(FName("Projectile"))
-			);
-
-		Projectile->LaunchProjectile(LaunchSpeed);
-		LastFireTime = FPlatformTime::Seconds();
-	}
-}
 
 
