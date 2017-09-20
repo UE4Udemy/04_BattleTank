@@ -57,19 +57,19 @@ private:
 
 	bool bIsBarrelMoving();
 
-	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-	float LaunchSpeed = 14600;
-
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	float LaunchSpeed = 14600;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 ShotsLeft = 3;
 
 	double LastFireTime = 0;
 
 	FVector AimDirection;
-
-	int32 ShotsLeft = 3;
-
 };
