@@ -11,5 +11,17 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 }
 
+float ATank::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser)
+{
+	
+	float DamageToApply = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	if (CurrentHealth > 0.f)
+	{
+		CurrentHealth -= DamageToApply;
+	}
+
+	return DamageToApply;
+}
+
 
 
