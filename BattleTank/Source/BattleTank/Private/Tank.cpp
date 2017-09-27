@@ -4,7 +4,7 @@
 #include "Tank.h"
 
 
-float ATank::GetHealthPercent() const
+float ATank::GetHealthPercent()
 {
 	return CurrentHealth / StartingHealth;
 }

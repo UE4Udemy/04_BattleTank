@@ -15,7 +15,7 @@ public:
 
 	//return as percentage of startinghealth, from 0 to 100
 	UFUNCTION(BlueprintPure, Category = "Health")
-	float GetHealthPercent() const;
+	float GetHealthPercent();
 
 private:	
 	// Sets default values for this pawn's properties
