@@ -15,6 +15,8 @@ class BATTLETANK_API ATank : public APawn
 public:
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser) override;
 
+	virtual void BeginPlay() override;
+
 	//return as percentage of startinghealth, from 0 to 100
 	UFUNCTION(BlueprintPure, Category = "Health")
 	float GetHealthPercent();
@@ -29,5 +31,5 @@ private:
 	float StartingHealth = 100.f;
 
 	UPROPERTY(VisibleAnyWhere, Category = "Health")
-	float CurrentHealth = StartingHealth;
+	float CurrentHealth; // init in Begin Play
 };
